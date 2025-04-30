@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create PPAP - PPAP Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">
+                <img src="1.png" width="150" alt="Pricol">
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li>
+                        <a href="index.html"><i class="fas fa-home"></i>Dashboard</a>
+                    </li>
+                    <li class="active">
+                        <a href="ppap.html"><i class="fas fa-user"></i>PPAP</a>
+                    </li>
+                    <li>
+                        <a href="sop.html"><i class="fas fa-users"></i>SOP</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="topbar">
+                <button class="menu-toggle">☰</button>
+                <h1 class="page-title">Create PPAP</h1>
+                <div class="user-profile">
+                    <div class="profile-info">
+                        <span class="user-name">Suresh</span>
+                        <span class="user-role">User</span>
+                    </div>
+                    <div class="profile-image">JD</div>
+                </div>
+            </header>
+
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="#">Home</a>
+                <span class="separator">></span>
+                <a href="ppap.html">PPAP</a>
+                <span class="separator">></span>
+                <span>Create PPAP</span>
+            </div>
+
+            <!-- Form Content -->
+            <div class="ppap-content">
+                <div class="form-container">
+                    <div class="form-header">
+                        <h2>PPAP Sign off Document</h2>
+                        <div class="document-info">
+                            <span class="info-item">Form No: F-P1-PDE-069</span>
+                            <span class="info-item">Issue No: 2</span>
+                            <span class="info-item">Rev.No: 01</span>
+                            <span class="info-item">Effective Date: 19-06-2024</span>
+                        </div>
+                    </div>
+                    <form id="ppapForm" class="form-content" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="customerName">Customer Name</label>
+                            <input type="text" id="customerName" name="customerName">
+                        </div>
+                        <div class="form-group">
+                            <label for="productName">Product Name</label>
+                            <input type="text" id="productName" name="productName">
+                        </div>
+                        <div class="form-group">
+                            <label for="productNo">Product No.</label>
+                            <input type="text" id="productNo" name="productNo">
+                        </div>
+                        <div class="form-group">
+                            <label for="customerPartNo">Customer part no.</label>
+                            <input type="text" id="customerPartNo" name="customerPartNo">
+                        </div>
+                        <div class="form-group">
+                            <label for="productType">Product Type</label>
+                            <input type="text" id="productType" name="productType">
+                        </div>
+                        <div class="form-group">
+                            <label for="pif">PIF</label>
+                            <input type="text" id="pif" name="pif">
+                        </div>
+                        <div class="form-group">
+                            <label for="volume">Volume</label>
+                            <input type="text" id="volume" name="volume">
+                        </div>
+                        <div class="form-group">
+                            <label for="vehicleModel">Vehicle Model</label>
+                            <input type="text" id="vehicleModel" name="vehicleModel">
+                        </div>
+                        <div class="form-group">
+                            <label for="market">Market</label>
+                            <input type="text" id="market" name="market">
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="specifications">Specifications</label>
+                            <textarea id="specifications" name="specifications" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="ppapDateQty">PPAP Date & Qty</label>
+                            <input type="text" id="ppapDateQty" name="ppapDateQty">
+                        </div>
+                        <div class="form-group">
+                            <label for="manufacturingUnit">Manufacturing - Business unit</label>
+                            <input type="text" id="manufacturingUnit" name="manufacturingUnit">
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="productView">PRODUCT VIEW</label>
+                            <div class="image-upload-container">
+                                <div class="image-preview">
+                                    <img src="" alt="Product Preview" id="previewImage" style="display: none;">
+                                    <div class="upload-placeholder" id="uploadPlaceholder">
+                                        <i class="upload-icon">📁</i>
+                                        <p>Click to upload product image or drag and drop</p>
+                                    </div>
+                                </div>
+                                <input type="file" id="productView" name="productView" accept="image/*"
+                                    class="file-input">
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <a href="ppap.html" class="btn-back">Back</a>
+                            <button type="submit" class="btn-submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            // Here you can add form validation and data processing
+            window.location.href = 'approval.html';
+        }
+
+        // Image preview handling
+        const productView = document.getElementById('productView');
+        const previewImage = document.getElementById('previewImage');
+        const uploadPlaceholder = document.getElementById('uploadPlaceholder');
+
+        productView.addEventListener('change', function (e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    previewImage.src = e.target.result;
+                    previewImage.style.display = 'block';
+                    uploadPlaceholder.style.display = 'none';
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPAP Command - PPAP Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .command-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            /* margin-top: 2rem; */
+        }
+
+        .command-textarea {
+            width: 100%;
+            min-height: 150px;
+            padding: 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            resize: vertical;
+        }
+
+        .command-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+        }
+
+        .btn-comment {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-approve {
+            background: #10B981;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-comment:hover {
+            background: #0969a0;
+        }
+
+        .btn-approve:hover {
+            background: #059669;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">
+                <img src="1.png" width="150" alt="Pricol">
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li>
+                        <a href="index.html"><i class="fas fa-home"></i>Dashboard</a>
+                    </li>
+                    <li class="active">
+                        <a href="ppap.html"><i class="fas fa-user"></i>PPAP</a>
+                    </li>
+                    <li>
+                        <a href="sop.html"><i class="fas fa-users"></i>SOP</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="topbar">
+                <button class="menu-toggle">☰</button>
+                <h1 class="page-title">PPAP Command</h1>
+                <div class="user-profile">
+                    <div class="profile-info">
+                        <span class="user-name">Suresh</span>
+                        <span class="user-role">User</span>
+                    </div>
+                    <div class="profile-image">JD</div>
+                </div>
+            </header>
+
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="#">Home</a>
+                <span class="separator">></span>
+                <a href="ppap.html">PPAP</a>
+                <span class="separator">></span>
+                <span>Command</span>
+            </div>
+
+            <!-- Command Content -->
+            <div class="ppap-content">
+                <div class="command-container">
+                    <div class="form-header">
+                        <h2>Add Comment or Approval</h2>
+                    </div>
+                    <form id="commandForm">
+                        <textarea class="command-textarea" placeholder="Enter your comments here..."
+                            id="commandText"></textarea>
+                        <div class="command-actions">
+                            <button type="button" class="btn-comment" id="commentBtn">Comment</button>
+                            <button type="button" class="btn-approve" id="approveBtn">Approve</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const sidebar = document.querySelector('.sidebar');
+            const mainContent = document.querySelector('.main-content');
+
+            // Handle menu toggle
+            menuToggle.addEventListener('click', function () {
+                sidebar.classList.toggle('collapsed');
+                sidebar.classList.toggle('sidebar-hidden');
+                mainContent.classList.toggle('expanded');
+                document.body.classList.toggle('sidebar-hidden');
+            });
+
+            // Handle comment button click
+            document.getElementById('commentBtn').addEventListener('click', function () {
+                const comment = document.getElementById('commandText').value;
+                console.log('Comment:', comment);
+                // Add your comment handling logic here
+                window.location.href = 'ppap.html';
+            });
+
+            // Handle approve button click
+            document.getElementById('approveBtn').addEventListener('click', function () {
+                const comment = document.getElementById('commandText').value;
+                console.log('Approved with comment:', comment);
+                // Add your approval handling logic here
+                window.location.href = 'ppap.html';
+            });
+        });
+    </script>
+</body>
+
+</html>

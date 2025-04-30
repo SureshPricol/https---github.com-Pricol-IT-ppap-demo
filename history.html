@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPAP History - PPAP Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .history-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-flow {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .history-item {
+            display: flex;
+            gap: 1rem;
+            padding: 0.5rem;
+            margin: 1rem 0;
+            background: transparent;
+        }
+
+        .history-item.incoming {
+            justify-content: flex-start;
+        }
+
+        .history-item.outgoing {
+            justify-content: flex-end;
+            flex-direction: row-reverse;
+        }
+
+        .history-content {
+            max-width: 70%;
+            padding: 1rem;
+            border-radius: 12px;
+        }
+
+        .history-item.incoming .history-content {
+            background: #f0f9ff;
+            border-radius: 12px 12px 12px 0;
+        }
+
+        .history-item.outgoing .history-content {
+            background: #f0fdf4;
+            border-radius: 12px 12px 0 12px;
+            text-align: right;
+        }
+
+        .history-item.outgoing .history-header {
+            flex-direction: row-reverse;
+        }
+
+        .history-avatar {
+            align-self: flex-end;
+
+
+            border-radius: 8px;
+            background: #f8f9fa;
+        }
+
+        .history-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #0284c7;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+        }
+
+        .history-content {
+            flex: 1;
+        }
+
+        .history-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .history-user {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .history-date {
+            color: #666;
+            font-size: 0.875rem;
+        }
+
+        .history-message {
+            color: #444;
+        }
+
+        .history-status {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .status-approved {
+            background: #dcfce7;
+            color: #15803d;
+        }
+
+        .status-pending {
+            background: #fef9c3;
+            color: #854d0e;
+        }
+
+        .status-rejected {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">
+                <img src="1.png" width="150" alt="Pricol">
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li>
+                        <a href="index.html"><i class="fas fa-home"></i>Dashboard</a>
+                    </li>
+                    <li class="active">
+                        <a href="ppap.html"><i class="fas fa-user"></i>PPAP</a>
+                    </li>
+                    <li>
+                        <a href="sop.html"><i class="fas fa-users"></i>SOP</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="topbar">
+                <button class="menu-toggle">☰</button>
+                <h1 class="page-title">PPAP History</h1>
+                <div class="user-profile">
+                    <div class="profile-info">
+                        <span class="user-name">Suresh</span>
+                        <span class="user-role">User</span>
+                    </div>
+                    <div class="profile-image">JD</div>
+                </div>
+            </header>
+
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="#">Home</a>
+                <span class="separator">></span>
+                <a href="ppap.html">PPAP</a>
+                <span class="separator">></span>
+                <span>History</span>
+            </div>
+
+            <!-- History Content -->
+            <div class="history-container">
+                <div class="chat-flow">
+                    <div class="history-item outgoing">
+                        <div class="history-content">
+                            <div class="history-header">
+                                <span class="history-date">2024-01-20 14:30</span>
+                                <span class="history-user">John Doe</span>
+                            </div>
+                            <div class="history-message">
+                                Initial PPAP submission completed
+                                <span class="history-status status-pending">Pending Review</span>
+                            </div>
+                        </div>
+                        <div class="history-avatar">JD</div>
+                    </div>
+
+                    <div class="history-item incoming">
+                        <div class="history-avatar">RS</div>
+                        <div class="history-content">
+                            <div class="history-header">
+                                <span class="history-user">Robert Smith</span>
+                                <span class="history-date">2024-01-21 09:15</span>
+                            </div>
+                            <div class="history-message">
+                                Reviewed and approved the submission
+                                <span class="history-status status-approved">Approved</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="history-item outgoing">
+                        <div class="history-content">
+                            <div class="history-header">
+                                <span class="history-date">2024-01-21 11:30</span>
+                                <span class="history-user">Alice Miller</span>
+                            </div>
+                            <div class="history-message">
+                                Requested changes in documentation
+                                <span class="history-status status-rejected">Changes Requested</span>
+                            </div>
+                        </div>
+                        <div class="history-avatar">AM</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>

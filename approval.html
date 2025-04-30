@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Approval - PPAP Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">
+                <img src="1.png" width="150" alt="Pricol">
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li>
+                        <a href="index.html"><i class="fas fa-home"></i>Dashboard</a>
+                    </li>
+                    <li class="active">
+                        <a href="ppap.html"><i class="fas fa-user"></i>PPAP</a>
+                    </li>
+                    <li>
+                        <a href="sop.html"><i class="fas fa-users"></i>SOP</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="topbar">
+                <button class="menu-toggle">☰</button>
+                <h1 class="page-title">PPAP - Add Approvers</h1>
+                <div class="user-profile">
+                    <div class="profile-info">
+                        <span class="user-name">Suresh</span>
+                        <span class="user-role">User</span>
+                    </div>
+                    <div class="profile-image">JD</div>
+                </div>
+            </header>
+
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="#">Home</a>
+                <span class="separator">></span>
+                <a href="ppap.html">PPAP</a>
+                <span class="separator">></span>
+                <span>Approval</span>
+            </div>
+
+            <!-- Approval Content -->
+            <div class="ppap-content">
+                <div class="form-container">
+                    <div class="form-header">
+                        <h2>PPAP - Add Approvers</h2>
+                    </div>
+                    <form id="approvalForm" class="form-content" action="viewer.html">
+                        <div class="form-group full-width">
+                            <label>Approvers</label>
+                            <div id="emailInputsContainer">
+                                <div class="email-container">
+                                    <input type="email" class="form-group email-input"
+                                        placeholder="Enter email address">
+                                </div>
+                            </div>
+                            <button type="button" id="addEmailBtn" class="btn-add-email">Add New</button>
+                        </div>
+
+                        <div class="form-actions">
+                            <a href="ppap.html" class="btn-back">Cancel</a>
+                            <button type="submit" class="btn-submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const sidebar = document.querySelector('.sidebar');
+            const mainContent = document.querySelector('.main-content');
+
+            // Handle menu toggle
+            menuToggle.addEventListener('click', function () {
+                sidebar.classList.toggle('collapsed');
+                sidebar.classList.toggle('sidebar-hidden');
+                mainContent.classList.toggle('expanded');
+                document.body.classList.toggle('sidebar-hidden');
+            });
+
+            // Handle form submission
+            // const approvalForm = document.getElementById('approvalForm');
+            // approvalForm.addEventListener('submit', function (e) {
+            //     e.preventDefault();
+
+            //     // Get all email inputs
+            //     const emailInputs = document.querySelectorAll('.email-input');
+            //     const approvers = Array.from(emailInputs).map(input => input.value);
+
+            //     // Here you can add code to handle the approvers data
+            //     console.log('Approvers:', approvers);
+            //     // Change the redirect to ppap.html instead of approval.html
+            //     window.location.href = 'ppap.html';
+            // });
+
+            // Handle adding new email inputs
+            const addEmailBtn = document.getElementById('addEmailBtn');
+            const emailInputsContainer = document.getElementById('emailInputsContainer');
+
+            addEmailBtn.addEventListener('click', function () {
+                const newEmailContainer = document.createElement('div');
+                newEmailContainer.className = 'email-container';
+
+                const newEmailInput = document.createElement('input');
+                newEmailInput.type = 'email';
+                newEmailInput.className = 'email-input';
+                newEmailInput.placeholder = 'Enter email address';
+
+                const removeBtn = document.createElement('button');
+                removeBtn.type = 'button';
+                removeBtn.className = 'btn-remove';
+                removeBtn.textContent = 'Remove';
+                removeBtn.onclick = function () {
+                    newEmailContainer.remove();
+                };
+
+                newEmailContainer.appendChild(newEmailInput);
+                newEmailContainer.appendChild(removeBtn);
+                emailInputsContainer.appendChild(newEmailContainer);
+            });
+        });
+    </script>
+</body>
+
+</html>

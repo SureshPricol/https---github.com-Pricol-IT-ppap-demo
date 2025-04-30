@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - PPAP Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">
+                <img src="1.png" width="150" alt="Pricol">
+                <!-- <span>pricol</span> -->
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li class="active">
+                        <a href="index.html"><i class="fas fa-home"></i>Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="ppap.html"><i class="fas fa-user"></i>PPAP</a>
+                    </li>
+                    <li>
+                        <a href="sop.html"><i class="fas fa-users"></i>SOP</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="topbar">
+                <button class="menu-toggle">☰</button>
+                <h1 class="page-title">Dashboard</h1>
+                <div class="user-profile">
+                    <div class="profile-info">
+                        <span class="user-name">Suresh</span>
+                        <span class="user-role">User</span>
+                    </div>
+                    <div class="profile-image">JD</div>
+                </div>
+            </header>
+
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="#">Home</a>
+                <span class="separator">></span>
+                <span>Dashboard</span>
+            </div>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <div class="dashboard-cards">
+                    <div class="card">
+                        <h3>Total PPAP</h3>
+                        <p class="number">24</p>
+                        <p class="trend positive">↑ 12% from last month</p>
+                    </div>
+                    <div class="card">
+                        <h3>Pending Approval</h3>
+                        <p class="number">8</p>
+                        <p class="trend negative">↓ 5% from last month</p>
+                    </div>
+                    <div class="card">
+                        <h3>Active SOPs</h3>
+                        <p class="number">15</p>
+                        <p class="trend positive">↑ 20% from last month</p>
+                    </div>
+                </div>
+
+                <div class="recent-activity">
+                    <h3>Recent Activity</h3>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <span class="activity-time">2 hours ago</span>
+                            <span class="activity-text">New PPAP submitted for Product C</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-time">5 hours ago</span>
+                            <span class="activity-text">SOP-123 updated by John Smith</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-time">1 day ago</span>
+                            <span class="activity-text">PPAP-456 approved by Quality Manager</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

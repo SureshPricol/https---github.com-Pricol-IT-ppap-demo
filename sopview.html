@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View PPAP - PPAP Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .view-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            background-color: #f8f9fa;
+            cursor: not-allowed;
+            border: 1px solid #e2e8f0;
+        }
+
+        .product-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .header-with-nav {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .back-arrow {
+            font-size: 24px;
+            color: #333;
+            text-decoration: none;
+            display: inline-block;
+            margin-right: 10px;
+            transition: transform 0.2s;
+        }
+
+        .back-arrow:hover {
+            transform: translateX(-5px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">
+                <img src="1.png" width="150" alt="Pricol">
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li>
+                        <a href="index.html"><i class="fas fa-home"></i>Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="ppap.html"><i class="fas fa-user"></i>PPAP</a>
+                    </li>
+                    <li class="active">
+                        <a href="sop.html"><i class="fas fa-users"></i>SOP</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="topbar">
+                <button class="menu-toggle">☰</button>
+                <h1 class="page-title">View PPAP</h1>
+                <div class="user-profile">
+                    <div class="profile-info">
+                        <span class="user-name">Suresh</span>
+                        <span class="user-role">User</span>
+                    </div>
+                    <div class="profile-image">JD</div>
+                </div>
+            </header>
+
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="#">Home</a>
+                <span class="separator">></span>
+                <a href="ppap.html">PPAP</a>
+                <span class="separator">></span>
+                <span>View PPAP</span>
+            </div>
+
+            <!-- Form Content -->
+            <div class="ppap-content">
+                <div class="form-container">
+                    <div class="form-header">
+                        <div class="header-with-nav">
+                            <!-- <a href="ppap.html" class="back-arrow">←</a> -->
+                            <h2>PPAP Sign off Document</h2>
+                        </div>
+                        <div class="document-info">
+                            <span class="info-item">Form No: F-P1-PDE-069</span>
+                            <span class="info-item">Issue No: 2</span>
+                            <span class="info-item">Rev.No: 01</span>
+                            <span class="info-item">Effective Date: 19-06-2024</span>
+                        </div>
+                    </div>
+                    <div class="form-content">
+                        <div class="info-group">
+                            <label>Customer Name</label>
+                            <div class="info-value">ABC Automotive Ltd.</div>
+                        </div>
+                        <div class="info-group">
+                            <label>Product Name</label>
+                            <div class="info-value">Digital Speedometer</div>
+                        </div>
+                        <div class="info-group">
+                            <label>Product No.</label>
+                            <div class="info-value">SP-2024-001</div>
+                        </div>
+                        <div class="info-group">
+                            <label>Customer part no.</label>
+                            <div class="info-value">ABC-SP-001</div>
+                        </div>
+                        <div class="info-group">
+                            <label>Product Type</label>
+                            <div class="info-value">Electronic Instrument Cluster</div>
+                        </div>
+                        <div class="info-group">
+                            <label>PIF</label>
+                            <div class="info-value">PIF-2024-0123</div>
+                        </div>
+                        <div class="info-group">
+                            <label>Volume</label>
+                            <div class="info-value">10,000 units/year</div>
+                        </div>
+                        <div class="info-group">
+                            <label>Vehicle Model</label>
+                            <div class="info-value">XYZ SUV 2024</div>
+                        </div>
+                        <div class="info-group">
+                            <label>Market</label>
+                            <div class="info-value">Domestic</div>
+                        </div>
+                        <div class="info-group full-width">
+                            <label>Specifications</label>
+                            <div class="info-value specs">
+                                - Operating Voltage: 12V DC
+                                - Display Type: LCD with LED backlight
+                                - Speed Range: 0-240 km/h
+                                - Operating Temperature: -40°C to +85°C
+                                - IP Rating: IP67
+                            </div>
+                        </div>
+                        <div class="info-group">
+                            <label>PPAP Date & Qty</label>
+                            <div class="info-value">2024-03-15 / 50 units</div>
+                        </div>
+                        <div class="info-group">
+                            <label>Manufacturing - Business unit</label>
+                            <div class="info-value">Plant 3 - Electronics Division</div>
+                        </div>
+                        <div class="info-group full-width">
+                            <label>PRODUCT VIEW</label>
+                            <div class="image-preview">
+                                <img src="dsm.jpeg" alt="Digital Speedometer Preview" class="product-image">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-content">
+                        <div class="info-group ">
+                            <h2>SOP Details</h2>
+                        </div>
+                        <br>
+                        <div class="info-group">
+                            <label>Date</label>
+                            <div class="info-value">2024-03-15</div>
+                        </div>
+                        <div class="info-group">
+                            <label>Material Code</label>
+                            <div class="info-value">MC-2024-001</div>
+                        </div>
+                        <div class="form-actions">
+                            <a href="sop.html" class="btn-back">Back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const sidebar = document.querySelector('.sidebar');
+
+            menuToggle.addEventListener('click', function () {
+                sidebar.classList.toggle('collapsed');
+                sidebar.classList.toggle('sidebar-hidden');
+                document.body.classList.toggle('sidebar-hidden');
+            });
+        });
+    </script>
+</body>
+
+</html>

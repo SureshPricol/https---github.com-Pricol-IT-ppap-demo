@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOP Management - PPAP Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">
+                <img src="1.png" width="150" alt="Pricol">
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li>
+                        <a href="index.html"><i class="fas fa-home"></i>Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="ppap.html"><i class="fas fa-user"></i>PPAP</a>
+                    </li>
+                    <li class="active">
+                        <a href="sop.html"><i class="fas fa-users"></i>SOP</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="topbar">
+                <button class="menu-toggle">☰</button>
+                <h1 class="page-title">SOP Management</h1>
+                <div class="user-profile">
+                    <div class="profile-info">
+                        <span class="user-name">Suresh</span>
+                        <span class="user-role">User</span>
+                    </div>
+                    <div class="profile-image">JD</div>
+                </div>
+            </header>
+
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="#">Home</a>
+                <span class="separator">></span>
+                <span>SOP</span>
+            </div>
+
+            <!-- SOP Content -->
+            <div class="ppap-content">
+                <div class="section-header">
+                    <h2>SOP Management</h2>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>SOP Number</th>
+                                <th>Title</th>
+                                <th>Status</th>
+                                <th>Last Updated</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SOP-001</td>
+                                <td>Quality Control Process</td>
+                                <td>Active</td>
+                                <td>2024-01-15</td>
+                                <td>
+                                    <button class="btn-view" onclick="window.location.href='sopview.html'">View</button>
+                                    <button class="btn-history"
+                                        onclick="window.location.href='sopedit.html'">Entry</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>SOP-002</td>
+                                <td>Safety Guidelines</td>
+                                <td>Active</td>
+                                <td>2024-01-10</td>
+                                <td>
+                                    <button class="btn-view" onclick="window.location.href='sopview.html'">View</button>
+
+                                    <button class="btn-history"
+                                        onclick="window.location.href='sopedit.html'">Entry</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

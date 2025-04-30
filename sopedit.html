@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit SOP - PPAP Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .edit-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .btn-save {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .btn-save:hover {
+            background-color: #218838;
+        }
+
+        .back-arrow {
+            font-size: 24px;
+            color: #333;
+            text-decoration: none;
+            display: inline-block;
+            margin-right: 10px;
+            transition: transform 0.2s;
+        }
+
+        .back-arrow:hover {
+            transform: translateX(-5px);
+        }
+
+        .header-with-nav {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">
+                <img src="1.png" width="150" alt="Pricol">
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li>
+                        <a href="index.html"><i class="fas fa-home"></i>Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="ppap.html"><i class="fas fa-user"></i>PPAP</a>
+                    </li>
+                    <li class="active">
+                        <a href="sop.html"><i class="fas fa-users"></i>SOP</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="topbar">
+                <button class="menu-toggle" id="sidebarToggle">☰</button>
+                <h1 class="page-title">Edit SOP</h1>
+                <div class="user-profile">
+                    <div class="profile-info">
+                        <span class="user-name">Suresh</span>
+                        <span class="user-role">User</span>
+                    </div>
+                    <div class="profile-image">JD</div>
+                </div>
+            </header>
+
+            <!-- Breadcrumb Navigation -->
+            <div class="breadcrumb">
+                <a href="index.html" class="breadcrumb-item">Home</a>
+                <span class="breadcrumb-separator">></span>
+                <a href="SOP.html" class="breadcrumb-item">SOP</a>
+                <span class="breadcrumb-separator">></span>
+                <span class="breadcrumb-item active">Edit SOP</span>
+            </div>
+
+            <div class="ppap-content">
+                <section class="section">
+                    <div class="header-with-nav">
+
+                        <h2>SOP Entry</h2>&nbsp;&nbsp;
+
+                        <a href="sop.html" class="btn-back">Back</a>
+                    </div>
+                    <div class="edit-container">
+                        <form id="sopEditForm">
+                            <div class="form-group">
+                                <label for="date">Date</label>
+                                <input type="date" id="date" name="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="materialCode">Material Code</label>
+                                <input type="text" id="materialCode" name="materialCode"
+                                    placeholder="Enter material code" required>
+                            </div>
+                            <button type="submit" class="btn-save">Save Changes</button>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sidebarToggle = document.getElementById('sidebarToggle');
+            const sidebar = document.getElementById('sidebar');
+            const mainContent = document.querySelector('.main-content');
+
+            sidebarToggle.addEventListener('click', function () {
+                sidebar.classList.toggle('active');
+                mainContent.classList.toggle('expanded');
+            });
+        });
+    </script>
+</body>
+
+</html>
